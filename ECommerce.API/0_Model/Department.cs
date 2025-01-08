@@ -8,6 +8,6 @@ public class Department
     public string Name { get; set; } = "";
     public string Description { get; set; } = "";
 
-    public List<Item> items { get; set; } = [];
+    public List<Item> Items { get; set; } = [];
 
 }
