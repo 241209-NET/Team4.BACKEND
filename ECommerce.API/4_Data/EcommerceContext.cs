@@ -10,6 +10,6 @@ public class ECommerceContext : DbContext
 
     //Add other required DbSets here
     public DbSet<User> Users { get; set; }
-
+    public DbSet<Department> Departments { get; set; }
     
 }
