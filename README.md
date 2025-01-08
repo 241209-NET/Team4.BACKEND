@@ -56,8 +56,9 @@ We can Add lot more functionality to this Ecommerce Portal. Listed a few below f
     5. Allow different levels of access (i.e admin, subscriber, etc.)
 
 ## ERD Diagram:
+![E-Commerce ERD (1)](https://github.com/user-attachments/assets/426588da-cd99-4b3e-87ec-0b4bc367b384)
 
-![E-Commerce ERD](https://github.com/user-attachments/assets/dbcaaa75-ef15-4624-87c5-00434d7a8f35)
+
 
 ## Controller API's:
 
