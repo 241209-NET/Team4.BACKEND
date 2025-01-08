@@ -3,12 +3,12 @@ namespace ECommerce.API.Model;
 public class User
 {
 
-    public int userId { get; set; }
+    public int UserId { get; set; }
 
-    public required string username { get; set; }
+    public required string Username { get; set; }
 
-    public required string password { get; set; }
+    public required string Password { get; set; }
 
-      public List<Order> orders { get; set; } = [];
+      public List<Order> Orders { get; set; } = [];
    
 }
