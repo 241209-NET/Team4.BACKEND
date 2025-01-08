@@ -9,4 +9,9 @@ public interface IUserRepository
 
 }
 
+public interface IItemRepository
+{
+    
+}
+
 //add interfaces for other repositories (based on model) below
