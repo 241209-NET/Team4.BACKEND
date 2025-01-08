@@ -1,7 +1,5 @@
 namespace ECommerce.API.Model;
 
-using ECommerce.API.Model;
-
 public class Order
 {
     

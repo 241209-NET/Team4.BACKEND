@@ -1,5 +1,3 @@
-using ECommerce.API.Model; 
-
 namespace ECommerce.API.Model; 
 
 public class User
