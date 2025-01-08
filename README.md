@@ -2,9 +2,7 @@
 
 ## E-Commerce Portal:
 
-This E-Commerce portal is a full-stack user centric application that allows a user to browse and purchase with a large variety of products. A user can
-create a new account, access an existing account, browse products sorted by department, add products to the cart,
-and modify and checkout with their order. The Portal is cloud hosted and utilizes the Smarty Streets API to verify inputted addresses.
+A full-stack user-centric application that allows a user to browse a database of products and make purchases. Users can create a new account or log-in to an existing account, browse products, add products to their cart, and checkout with their order. The application is cloud hosted, and utilizes the Smarty Streets API to verify user delivery addresses.
 
 ## Team Members:
 
