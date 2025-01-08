@@ -8,4 +8,8 @@ public interface IUserService
 
 }
 
+public interface IItemService
+{
+    
+}
 //Add interfaces for the other services (based on models) below
