@@ -1,15 +1,18 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace ECommerce.API.Model;
 
 public class Order
 {
     
-    public required int OrderId_PK { get; set; }
+    public required int OrderId { get; set; }
 
-    public required int UserId_FK { get; set; }
+    [ForeignKey("User")]
+    public required int UserId{ get; set; }
 
     public double TotalPrice { get; set; } = 0.0;
     
-    public List<Item> Items { get; set; } = new List<Item>();
+    public List<Item> Items { get; set; } = [];
 
     public bool IsOrdered { get; set; } = false;
 
