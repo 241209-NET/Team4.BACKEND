@@ -1,3 +1,5 @@
+using ECommerce.API.Model; 
+
 namespace ECommerce.API.Model; 
 
 public class User
@@ -8,5 +10,7 @@ public class User
     public required string username { get; set; }
 
     public required string password { get; set; }
+
+      public List<Order> orders { get; set; } = [];
    
 }

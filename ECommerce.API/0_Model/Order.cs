@@ -1,4 +1,4 @@
-namespace Ecommerce.API.Model;
+namespace ECommerce.API.Model;
 
 using ECommerce.API.Model;
 

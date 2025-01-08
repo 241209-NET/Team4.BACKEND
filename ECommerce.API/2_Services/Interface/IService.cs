@@ -4,6 +4,7 @@ namespace ECommerce.API.Service;
 
 public interface IUserService
 {
+    //include the contract for all methods in the UserService
 
 }
 
