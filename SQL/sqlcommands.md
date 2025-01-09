@@ -9,7 +9,29 @@ insert into Departments(Name) values('Furniture');
 insert into Departments(Name) values('Groceries');
 insert into Departments(Name) values('Pharmacy');
 
+## Items
 
+insert into Items values(1, 11,10.13 , 'DogMan','n DOG MAN: BIG JIM BEGINS, discover the origin of our beloved characters from the Dog Man series as they join forces to stop the Space Cuties from destroying the city. Will the past predict the future for Dog Man and his friends? Will goodness and bravery prevail? Can anything happen if you truly believe?')
+insert into Items values(1,59.99,5,'Full Stack JavaScript Strategies','The Hidden Parts Every Mid-Level Developer Needs to Know')
+insert into Items values(1,46.77,5,'ASP.NET Core in Action','Build professional-grade full-stack web applications using C# and ASP.NET Core.')
+insert into Items values(1,32.99,5,'C# in Depth','Effective techniques and experienced insights to maximize your C# 6 and 7 programming skills')
+insert into Items values(1,46.33,15,'React in Depth','A guide to the advanced React skills used by the very best React developers.')
+insert into Items values(1,47.40,5,'CSS in Depth','To create web designs that delight, entertain, and impress your users, you need to know CSS in depth!')
+insert into Items values(1,13.46,5,'Christmas at Hogwarts','From J.K. Rowling’s Harry Potter and the Sorcerer’s Stone, the story of Harry Potter’s first Christmas at Hogwarts, joyfully illustrated in a heartwarming picture book sure to delight readers of all ages!')
+insert into Items values(1,28.73,5,'Harry Potter and the Order of the Phoenix','The fifth book in the beloved, bestselling Harry Potter series, now illustrated in brilliant full color.')
+insert into Items values(1,4.50,5,'The Biggest Snowman Ever','Kids will adore this sequel to the New York Times bestseller The Biggest Pumpkin Ever!')
+insert into Items values(1,28.44,10,'Apps and Services with .NET 8','Second Edition: Build practical projects with Blazor, .NET MAUI, gRPC, GraphQL, and other enterprise technologies 2nd ed. Edition')
+
+insert into Items values(2,9.98,50,'Desktop Calculator','CATIGA 12 Digits Desktop Calculator with Large LCD Display and Sensitive Button, Dual Solar Power and Battery, Standard Function for Office, Home, School, CD-2786')
+insert into Items values(2,99.98,10,'Document Camera','IPEVO V4K Ultra High Definition 8MP USB Document Camera — Mac OS, Windows, Chromebook Compatible for Live Demo, Web Conferencing, Distance Learning, Remote Teaching')
+insert into Items values(2,9.98,5,'Square Reader','Square Reader for magstripe (USB-C)')
+insert into Items values(2,450,50,'HP Color Laserjet Pro','HP Color Laserjet Pro MFP 3301fdw Wireless All-in-One Color Laser Printer, Office Printer, Scanner, Copier, Fax, ADF, Duplex, Best-for-Office (499Q5F)')
+insert into Items values(2,400,10,'Surround Sound System','Klipsch Black Reference Theater Pack 5.1 Surround Sound System')
+insert into Items values(2,9.98,50,'HDMI Cable','Highwings 8K 10K 4K HDMI Cable 48Gbps 6.6FT/2M, Certified Ultra High Speed HDMI Cable Braided Cord-4K@120Hz 8K@60Hz, DTS:X, HDCP 2.2 & 2.3, HDR 10 Compatible with Roku TV/PS5/HDTV/Blu-ray')
+insert into Items values(2,9.98,50,'Remote-Control for Roku-TV','(Pack of 2) Replacement-Remote-Control for Roku-TV,Compatible for TCL Roku/Hisense Roku/Onn Roku/Philips Roku Smart TVs(Not for Stick and Box)')
+insert into Items values(2,1000,20,'Sony 75-Inch TV','Sony 75-Inch Class 4K Ultra HD BRAVIA 3 LED Smart TV with Google TV, Dolby Vision HDR, and Exclusive Features for PlayStation®5 (K-75S30), 2024 Model')
+insert into Items values(2,75,30,'TV Wall Mount','Mounting Dream TV Wall Mount for 32-65 Inch TV, TV Mount with Swivel and Tilt, Full Motion TV Bracket with Articulating Dual Arms, Fits 16inch Studs, Max VESA 400X400 mm, 99lbs, MD2380')
+insert into Items values(2,1004,40,'Apple 2024 MacBook','Apple 2024 MacBook Air 13-inch Laptop with M3 chip: Built for Apple Intelligence, 13.6-inch Liquid Retina Display, 16GB Unified Memory, 256GB SSD Storage, Backlit Keyboard, Touch ID; Space Gray')
 
 INSERT into ITEMS VALUES
 (5, 10.00, 50, 'Red Shirt', 'A Red Shirt with a Smiley-Face.'),
