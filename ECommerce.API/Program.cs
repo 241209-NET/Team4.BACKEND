@@ -1,4 +1,6 @@
 using ECommerce.API.Data;
+using ECommerce.API.Repository;
+using ECommerce.API.Service;
 using Microsoft.EntityFrameworkCore; 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,8 +15,12 @@ builder.Services.AddDbContext<ECommerceContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ECommerceDB"))); 
 
 //add service dependencies
+builder.Services.AddScoped<IUserService, UserService>(); 
+builder.Services.AddScoped<IOrderService, OrderService>(); 
 
 //add repo dependencies
+builder.Services.AddScoped<IUserRepository, UserRepository>(); 
+builder.Services.AddScoped<IOrderRepository, OrderRepository>(); 
 
 //add controllers
 builder.Services.AddControllers()

@@ -1,3 +1,4 @@
+using ECommerce.API.Exceptions;
 using ECommerce.API.Model; 
 using ECommerce.API.Service; 
 using Microsoft.AspNetCore.Mvc; 
@@ -19,6 +20,7 @@ public class UserController : ControllerBase
         return Ok(userList); 
     }
 
+/*
     [HttpPost]
     public IActionResult AddNewUser(User newUser)
     {
@@ -29,6 +31,19 @@ public class UserController : ControllerBase
         }
 
         return Ok(addedUser); 
+
+    }*/
+
+    [HttpPost]
+    public IActionResult AddNewUser(User newUser)
+    {
+        try{
+            var addedUser = _userService.AddNewUser(newUser); 
+            return Ok(addedUser); 
+
+        }catch(UsernameAlreadyExistsException e){
+            return Conflict(e);
+        }
 
     }
 
