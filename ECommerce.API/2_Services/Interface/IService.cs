@@ -21,4 +21,21 @@ public interface IItemService
 {
     
 }
+
+public interface IOrderService
+{
+    public Order GetOrderById(int id);
+    public List<Item>? GetItemsInOrderById(int id);
+    public Order AddItemToOrder(Item item, Order order);
+
+    public Order DeleteItemFromOrder(Item item, Order order);
+
+    public Order UpdateItemQuantityInOrder(Item item, Order order);
+
+    public float GetItemsTotal(Order order);
+
+    public DateTime GetOrderStatus(int id);
+
+    public Order CompleteCheckout(Order order);
+}
 //Add interfaces for the other services (based on models) below
