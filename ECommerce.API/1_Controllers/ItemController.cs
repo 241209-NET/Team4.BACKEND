@@ -42,4 +42,10 @@ public class ItemController : ControllerBase
         return Ok(_itemService.DeleteItemById(id));
     }
 
+    [HttpPut("{id}")]
+    public IActionResult UpdateItemQuantityById(int quantity, int id)
+    {
+        return Ok(_itemService.UpdateItemQuantityById(quantity, id));
+    }
+
 }

@@ -35,4 +35,9 @@ public class ItemService : IItemService
     {
         return _itemRepository.DeleteItemById(id) ?? throw new NotFoundException("Item not found");
     }
+
+    public Item UpdateItemQuantityById(int quantity, int id)
+    {
+        return _itemRepository.UpdateItemQuantityById(quantity, id) ?? throw new NotFoundException("Item not found");
+    }
 }

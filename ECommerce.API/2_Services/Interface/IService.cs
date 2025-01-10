@@ -24,6 +24,7 @@ public interface IItemService
     public IEnumerable<Item> GetItemsInStock();
     public Item AddNewItem(Item newItem);
     public Item DeleteItemById(int id);
+    public Item UpdateItemQuantityById(int quantity, int id);
 
 }
 

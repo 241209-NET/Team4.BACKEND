@@ -44,6 +44,15 @@ public class ItemRepository : IItemRepository
 
         return oldItem; 
     }
+
+    public Item? UpdateItemQuantityById(int quantity, int id)
+    {
+        var newItem = GetItemById(id);
+        newItem.Quantity = quantity; 
+        _ecommerceContext.SaveChanges(); 
+
+        return GetItemById(newItem.ItemId);
+    }
     
 }
 
