@@ -9,7 +9,7 @@ public class DepartmentRepository : IDepartmentRepository
 {
 
     private readonly ECommerceContext _eCommerceContext;
-    public DepartmentRepository(ECommerceContext eCommerceContext) => _eCommerceContext = eCommerceContext;
+    public DepartmentRepository(ECommerceContext eCommerceContext) => eCommerceContext = _eCommerceContext;
 
     public IEnumerable<Department> GetAllDepartments()
     {
