@@ -18,9 +18,31 @@ public class ItemRepository : IItemRepository
 
     // get items in stock
 
-    public List<Item> GetItemsInStock()
+    public IEnumerable<Item>? GetItemsInStock()
     {
-        return _ecommerceContext.Items.ToList();
+        return _ecommerceContext.Items
+        .Where(i => i.Quantity > 0)
+        .ToList();
+    }
+
+    // add item
+    public Item? AddNewItem(Item newItem)
+    {
+        _ecommerceContext.Add(newItem);
+        _ecommerceContext.SaveChanges(); 
+
+        return GetItemById(newItem.ItemId);
+;
+    }
+
+    //delete item
+    public Item? DeleteItemById(int id)
+    {
+        var oldItem = GetItemById(id); 
+        _ecommerceContext.Items.Remove(oldItem!); 
+        _ecommerceContext.SaveChanges(); 
+
+        return oldItem; 
     }
     
 }
