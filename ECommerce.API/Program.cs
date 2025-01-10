@@ -4,7 +4,7 @@ using ECommerce.API.Model;
 using ECommerce.API.Repository;
 using ECommerce.API.Service;
 
-using Microsoft.EntityFrameworkCore; 
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,19 +18,22 @@ builder.Services.AddDbContext<ECommerceContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("ECommerceDB")));
 
 //add service dependencies
-builder.Services.AddScoped<IUserService, UserService>(); 
-builder.Services.AddScoped<IOrderService, OrderService>(); 
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IDepartmentService, DepartmentService>();
 builder.Services.AddScoped<IItemService, ItemService>();
 
 //add repo dependencies
-builder.Services.AddScoped<IUserRepository, UserRepository>(); 
-builder.Services.AddScoped<IOrderRepository, OrderRepository>(); 
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 builder.Services.AddScoped<IItemRepository, ItemRepository>();
+<<<<<<< HEAD
 
 //add AutoMapper
 builder.Services.AddAutoMapper(typeof(MappingProfile));
+=======
+>>>>>>> 41a4a42efe9575b558304a147e9b4642d11f895e
 
 
 //add controllers
