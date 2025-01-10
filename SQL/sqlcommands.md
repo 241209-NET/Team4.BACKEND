@@ -54,3 +54,25 @@ INSERT into ITEMS VALUES
 (6, 6000.00, 1, 'Chandelier', 'One-of-a-kind Hanging Chandelier with Lights.'),
 (6, 275.00, 7, 'NightStand', 'Small Bed-Side table with drawer for storage.'),
 (6, 349.99, 17, 'Office Desk', 'Perfect Desk for productivity! Some assembly required.')
+
+INSERT INTO Items VALUES(3, 39.99, 10, 'Amorston 15 Pieces Knife Set', 'Stainless steel knife set'); 
+INSERT INTO Items VALUES(3, 37.56, 15, 'JoyFul 24pc Freezer Safe Food Storage Containers', 'Glass food storage containers for everything!'); 
+INSERT INTO Items VALUES(3, 19.99, 14, 'Magnetic Spice Storage Rack', 'Sticks to the side of a refrigerator or oven'); 
+INSERT INTO Items VALUES(3, 27.99, 16, 'Dish Drying Rack', 'Large capacity drying rack for kitchen counter'); 
+INSERT INTO Items VALUES(3, 29.99, 10, 'Silicone Cooking Utensil Set', '15 item premium kitchen utensil set'); 
+INSERT INTO Items VALUES(3, 10.99, 10, 'Food Kitchen Scale', 'Accurately weighs up to 11lbs with 1g increments'); 
+INSERT INTO Items VALUES(3, 45.99, 18, 'Under Sink Organizer', 'L-shaped design that leaves room for your plumbing'); 
+INSERT INTO Items VALUES(3, 129.99, 7, 'Electric Air Fryer', 'With 360 degree hot air circulation, this air fryer cooks quickly and evenly'); 
+INSERT INTO Items VALUES(3, 39.99, 13, 'Kitchen 6-Piece Wooden Spoons for Cooking', 'Top notch craftsmanship makes these spoons easy to clean and easy to store'); 
+INSERT INTO Items VALUES(3, 19.99, 20, 'Heavy-Duty Cast Iron Burger Press', 'Avoid harmful chemicals with our food-grade iron cookware'); 
+
+INSERT INTO Items VALUES(4, 31.57, 10, '2-Ply Ultra-Soft Toilet Paper, 24 Rolls', 'With 313 utra soft sheets per roll'); 
+INSERT INTO Items VALUES(4, 10.65, 12, 'Colgate Max Fresh Whitening Toothpaste', 'Breath freshing toothpaste pack includes four 6.3oz tubes'); 
+INSERT INTO Items VALUES(4, 9.99, 11, '18pack Travel Bottles for Toiletries', 'TSA approved toiletry travel bottles'); 
+INSERT INTO Items VALUES(4, 6.88, 13, 'Makeup Remover Wipes', 'These wipes are gentle on the eye area'); 
+INSERT INTO Items VALUES(4, 10.99, 10, 'Tooth Whitening Strips', 'Also leaves your breath minty fresh!'); 
+INSERT INTO Items VALUES(4, 4.01, 9, 'Flushable Adult Toilet Wipes', 'includes 3 packs of 42 flushable wipes, 126 total wipes'); 
+INSERT INTO Items VALUES(4, 9.99, 12, '26 Pieces Manicure Kit', 'Professional manicure kit made of stainless steel'); 
+INSERT INTO Items VALUES(4, 17.99, 16, 'Travel Toiletry Bag For Women', 'A space-efficient handing toiletry container'); 
+INSERT INTO Items VALUES(4, 6.99, 10, 'Air Freshener Toilet Spray', 'Smells like coconut!'); 
+INSERT INTO Items VALUES(4, 3.88, 22, 'Moisturizer Lip Balm Tubes', 'Keeps your lips hydrated and protected from the sun'); 

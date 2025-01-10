@@ -1,4 +1,5 @@
 using ECommerce.API.Model; 
+using ECommerce.API.DTO; 
 
 namespace ECommerce.API.Service; 
 
@@ -7,8 +8,8 @@ public interface IUserService
     //include the contract for all methods in the UserService
 
     public IEnumerable<User> GetAllUsers();
-    public User AddNewUser(User newUser); 
-    public User UserLogin(User loginUser); 
+    public User AddNewUser(UserInfoDTO newUser);
+    public User UserLogin(UserInfoDTO loginUser);
     public User GetUserById(int id);
     public User GetUserByName(string name); 
     public User UpdateUserById(User updateUser); 

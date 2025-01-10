@@ -1,5 +1,6 @@
 using ECommerce.API.Exceptions;
 using ECommerce.API.Model; 
+using ECommerce.API.DTO; 
 using ECommerce.API.Service; 
 using Microsoft.AspNetCore.Mvc; 
 
@@ -20,40 +21,27 @@ public class UserController : ControllerBase
         return Ok(userList); 
     }
 
-/*
-    [HttpPost]
-    public IActionResult AddNewUser(User newUser)
-    {
-        var addedUser = _userService.AddNewUser(newUser); 
-        if(addedUser is null){
-            //If the username already exists, return 409 Conflict
-            return Conflict(newUser); //status 409
-        }
-
-        return Ok(addedUser); 
-
-    }*/
 
     [HttpPost]
-    public IActionResult AddNewUser(User newUser)
+    public IActionResult AddNewUser(UserInfoDTO newUser)
     {
         try{
             var addedUser = _userService.AddNewUser(newUser); 
             return Ok(addedUser); 
 
-        }catch(UsernameAlreadyExistsException e){
-            return Conflict(e);
+        }catch(UsernameAlreadyExistsException){
+            return Conflict("Username already exists");
         }
 
     }
 
     [HttpPost("/login")]
-    public IActionResult UserLogin(User loginUser)
+    public IActionResult UserLogin(UserInfoDTO loginUser)
     {
         User checkedAccount = _userService.UserLogin(loginUser); 
         if(checkedAccount is null){
             //If the username doesn't exist or the password doesn't match, return 401 Unauthorized
-            return Unauthorized(loginUser); 
+            return Unauthorized("Username or Password is incorrect"); 
         }
 
         return Ok(checkedAccount); 

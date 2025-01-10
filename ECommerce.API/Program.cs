@@ -1,4 +1,6 @@
+using AutoMapper; 
 using ECommerce.API.Data;
+using ECommerce.API.Model;
 using ECommerce.API.Repository;
 using ECommerce.API.Service;
 
@@ -19,11 +21,16 @@ builder.Services.AddDbContext<ECommerceContext>(options =>
 builder.Services.AddScoped<IUserService, UserService>(); 
 builder.Services.AddScoped<IOrderService, OrderService>(); 
 builder.Services.AddScoped<IDepartmentService, DepartmentService>();
+builder.Services.AddScoped<IItemService, ItemService>();
 
 //add repo dependencies
 builder.Services.AddScoped<IUserRepository, UserRepository>(); 
 builder.Services.AddScoped<IOrderRepository, OrderRepository>(); 
 builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+builder.Services.AddScoped<IItemRepository, ItemRepository>();
+
+//add AutoMapper
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 
 //add controllers

@@ -1,5 +1,9 @@
+using ECommerce.API.Exceptions;
 using ECommerce.API.Model; 
-using ECommerce.API.Repository; 
+using ECommerce.API.DTO; 
+using ECommerce.API.Repository;
+using AutoMapper;
+using ECommerce.API.Util; 
 
 namespace ECommerce.API.Service; 
 
@@ -7,7 +11,13 @@ public class UserService : IUserService
 {
     public readonly IUserRepository _userRepository; 
 
-    public UserService(IUserRepository userRepository) => _userRepository = userRepository; 
+    private readonly IMapper _mapper;
+
+    public UserService(IUserRepository userRepository, IMapper mapper)
+    {
+        _userRepository = userRepository; 
+        _mapper = mapper;
+    }
 
     //include methods with the business logic below
 
@@ -17,22 +27,21 @@ public class UserService : IUserService
         return _userRepository.GetAllUsers(); 
     }
 
-    //add new user
-    public User AddNewUser(User newUser)
-    {
-        User addedUser = null; 
-        
+    //Add new user
+    public User AddNewUser(UserInfoDTO newUser)
+    {   
         //If the username doesn't already exist, add the new user and return the result
         if(!DoesUsernameExist(newUser.Username)){
-             addedUser = _userRepository.AddNewUser(newUser);
+            User fromDTO = _mapper.Map<User>(newUser); 
+            return _userRepository.AddNewUser(fromDTO);
+        }else{
+            throw new UsernameAlreadyExistsException("This Username Is Already Taken"); 
         }
 
-        //Else, return null
-        return addedUser; 
     }
 
     //user login
-    public User UserLogin(User loginUser)
+    public User UserLogin(UserInfoDTO loginUser)
     {
         User foundUser = _userRepository.GetUserByName(loginUser.Username); 
         if(foundUser is not null){
