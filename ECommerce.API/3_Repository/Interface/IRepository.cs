@@ -43,3 +43,12 @@ public interface IOrderRepository
     public Order CompleteCheckout(Order order);
     
 }
+
+public interface IDepartmentRepository
+{
+    public IEnumerable<Department> GetAllDepartments();
+    public Department? GetDepartmentById(int id);
+    public IEnumerable<Department>? GetDepartmentByName(string name);
+    public Department DeleteDepartmentById(int id);
+    public Task<Department> AddDepartment(Department department);
+}

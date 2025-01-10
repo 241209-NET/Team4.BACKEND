@@ -43,3 +43,12 @@ public interface IOrderService
     public Order CompleteCheckout(Order order);
 }
 //Add interfaces for the other services (based on models) below
+
+public interface IDepartmentService
+{
+    public IEnumerable<Department> GetAllDepartments();
+    public Department? GetDepartmentById(int id);
+    public IEnumerable<Department>? GetDepartmentByName(string name);
+    public Department DeleteDepartmentById(int id);
+    public Task<Department> AddDepartment(Department department);
+}
