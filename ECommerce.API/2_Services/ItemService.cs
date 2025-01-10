@@ -20,7 +20,7 @@ public class ItemService : IItemService
 
     //get all items in stock
 
-    public List<Item> GetItemsInStock()
+    public IEnumerable<Item> GetItemsInStock()
     {
         return _itemRepository.GetItemsInStock() ?? throw new NotFoundException("No items in stock");
     }
@@ -33,6 +33,6 @@ public class ItemService : IItemService
 
     public Item DeleteItemById(int id)
     {
-        return _itemRepository.DeleteItemById(id) ?? throw new NotFoundException("Item not found")
+        return _itemRepository.DeleteItemById(id) ?? throw new NotFoundException("Item not found");
     }
 }
