@@ -28,12 +28,9 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 builder.Services.AddScoped<IItemRepository, ItemRepository>();
-<<<<<<< HEAD
 
 //add AutoMapper
 builder.Services.AddAutoMapper(typeof(MappingProfile));
-=======
->>>>>>> 41a4a42efe9575b558304a147e9b4642d11f895e
 
 
 //add controllers
