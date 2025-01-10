@@ -1,6 +1,6 @@
 using ECommerce.API.Data; 
 using ECommerce.API.Model; 
-using Microsoft.VisualBasic; 
+using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.API.Repository; 
 
@@ -10,8 +10,18 @@ public class ItemRepository : IItemRepository
 
     public ItemRepository(ECommerceContext ecommerceContext) => _ecommerceContext = ecommerceContext; 
 
-    //CRUD Operations Below
+    //get item by id
+    public Item? GetItemById(int id)
+    {
+        return _ecommerceContext.Items.Find(id); 
+    }
 
+    // get items in stock
+
+    public List<Item> GetItemsInStock()
+    {
+        return _ecommerceContext.Items.ToList();
+    }
     
 }
 
