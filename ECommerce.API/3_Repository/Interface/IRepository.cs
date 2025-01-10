@@ -27,20 +27,21 @@ public interface IItemRepository
 public interface IOrderRepository
 {
 
+    public List<Order>? GetAllOrders();
     public Order? GetOrderById(int id);
 
     public List<Item>? GetItemsInOrderById(int id);
-    public Order AddItemToOrder(Item item, Order order);
+    public Order AddItemToOrder(int orderId, int itemId, int quantity);
 
-    public Order DeleteItemFromOrder(Item item, Order order);
+    public Order DeleteItemFromOrder(int orderId, int itemId);
 
-    public Order UpdateItemQuantityInOrder(Item item, Order order);
+    public Order UpdateItemQuantityInOrder(int orderId, int itemId, int quantity);
 
-    public float GetItemsTotal(Order order);
+    public float GetItemsTotal(int orderId);
 
-    public DateTime GetOrderStatus(int id);
+    public bool GetOrderStatus(int id);
 
-    public Order CompleteCheckout(Order order);
+    public Order CompleteCheckout(int orderId);
     
 }
 
