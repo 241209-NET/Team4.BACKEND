@@ -135,12 +135,12 @@ public class OrderController : ControllerBase
     }
 
     [HttpPatch]
-    [Route("{orderId}/items/{itemId}/quantity")]
-    public IActionResult UpdateItemQuantityInOrder(int orderId, int itemId, int quantity)
-    {
+    [Route("{orderId}/items/{itemId}/duplicate")]
+
+    public IActionResult DuplicateItemInList(int orderId, int itemId){
         try
         {
-            var res = _orderService.UpdateItemQuantityInOrder(orderId, itemId, quantity);
+            var res = _orderService.DuplicateItemInList(orderId, itemId);
             return Ok(res);
         }
         catch (NotFoundException e)
@@ -152,7 +152,27 @@ public class OrderController : ControllerBase
             return Conflict(e);
         }
     }
-    
+
+
+
+    [HttpPatch]
+    [Route("{orderId}/items/{itemId}/remove")]
+
+    public IActionResult RemoveItemInList(int orderId, int itemId){
+        try
+        {
+            var res = _orderService.RemoveItemInList(orderId, itemId);
+            return Ok(res);
+        }
+        catch (NotFoundException e)
+        {
+            return NotFound(e);
+        }
+        catch (Exception e)
+        {
+            return Conflict(e);
+        }
+    }
 
 
 

@@ -83,19 +83,26 @@ public class OrderService : IOrderService
 
     }
 
-    public Order UpdateItemQuantityInOrder(int orderId, int itemId, int quantity)
+
+    public List<Item> DuplicateItemInList(int orderId, int itemId)
     {
-         var orderFromDb = GetOrderById(orderId); // ...
-         var item = _itemRepository.GetItemById(itemId) ?? throw new NotFoundException("Item Not Found");
+        var orderFromDb = GetOrderById(orderId); // ...
+        var item = _itemRepository.GetItemById(itemId) ?? throw new NotFoundException("Item Doesnt Exist!");
 
-        if (!orderFromDb.Items.Contains(item)) throw new Exception("Item not Found in Order"); 
-                // Not sure if this will ever get thrown 
-                // when would we try to delete an item that isnt a part of the Order list?
-                // if kept need to create new exception.
+        if (!orderFromDb.Items.Contains(item)) throw new NotFoundException("Item not Found in Order!"); 
 
-        if (item.Quantity < 0 ) throw new Exception("Invalid Item Quantity");
-                // Not sure if this will ever get thrown 
+        return  _orderRepository.DuplicateItemInList(orderId, itemId);
 
-        return _orderRepository.UpdateItemQuantityInOrder(orderId, itemId, quantity);
+    }
+
+        public List<Item> RemoveItemInList(int orderId, int itemId)
+    {
+        var orderFromDb = GetOrderById(orderId); // ...
+        var item = _itemRepository.GetItemById(itemId) ?? throw new NotFoundException("Item Doesnt Exist!");
+
+        if (!orderFromDb.Items.Contains(item)) throw new NotFoundException("Item not Found in Order!"); 
+
+        return  _orderRepository.DuplicateItemInList(orderId, itemId);
+        
     }
 }

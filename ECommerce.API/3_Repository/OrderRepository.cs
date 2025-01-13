@@ -89,32 +89,6 @@ public class OrderRepository : IOrderRepository
         return order.IsOrdered;
     }
  
-    //DEF WANT TO ASK ABOUT THIS
-    public Order UpdateItemQuantityInOrder(int orderId, int itemId, int quantity)
-    {
-        // i want to get an order from the database
-        //if want to get the list of items in that order
-        //i want to find the item in the list of items
-        //i want to update the quantity of that item
-        //i want to save the changes to the database
-        //i want to return the updated order
-
-        var order = _ecommerceContext.Orders.Find(orderId)!;
-        var itemToUpdate = order.Items.FirstOrDefault(i => i.ItemId == itemId)!;
-        // take that item
-        // dupicate it
-        // update that new part of lsit
-
-         itemToUpdate.Quantity = quantity;
-
-        _ecommerceContext.Orders.Update(order);
-        _ecommerceContext.SaveChanges();
-        return _ecommerceContext.Orders.Find(orderId)!;
-
-
-
-
-    }
 
     // dupicate item in list
     /*
@@ -128,6 +102,26 @@ public class OrderRepository : IOrderRepository
     
     */
 
+    public List<Item> DuplicateItemInList(int orderId, int itemId){
+
+        var orderToUpdate = _ecommerceContext.Orders.Find(orderId);
+
+        var itemToDuplicate = _ecommerceContext.Items.Find(itemId)!;
+
+        var listToUpdate = orderToUpdate!.Items;
+
+        listToUpdate.Add(itemToDuplicate);
+
+        orderToUpdate.Items = listToUpdate;
+
+        _ecommerceContext.Orders.Update(orderToUpdate);
+        _ecommerceContext.SaveChanges();
+
+        return GetItemsInOrderById(orderId);
+
+
+
+    }
 
     // remove  item from list
 
@@ -141,6 +135,24 @@ public class OrderRepository : IOrderRepository
     - return that list
     
     */
+    public List<Item>? RemoveItemInList(int orderId, int itemId){
+
+        var orderToUpdate = _ecommerceContext.Orders.Find(orderId);
+
+        var itemToRemove = _ecommerceContext.Items.Find(itemId)!;
+
+        var listToUpdate = orderToUpdate!.Items;
+
+        listToUpdate.Remove(itemToRemove);
+
+        orderToUpdate.Items = listToUpdate;
+
+        _ecommerceContext.Orders.Update(orderToUpdate);
+        _ecommerceContext.SaveChanges();
+
+        return GetItemsInOrderById(orderId);
+        
+    }
 
 
 

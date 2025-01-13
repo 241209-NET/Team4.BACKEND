@@ -36,13 +36,15 @@ public interface IOrderRepository
 
     public Order DeleteItemFromOrder(int orderId, int itemId);
 
-    public Order UpdateItemQuantityInOrder(int orderId, int itemId, int quantity);
-
     public float GetItemsTotal(int orderId);
 
     public bool GetOrderStatus(int id);
 
     public Order CompleteCheckout(int orderId);
+
+    public List<Item>  DuplicateItemInList(int orderId, int itemId);
+
+    public List<Item>?  RemoveItemInList(int orderId, int itemId);
     
 }
 
