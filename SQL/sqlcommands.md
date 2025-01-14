@@ -83,20 +83,20 @@ insert into Items (DepartmentId, Price, Quantity, Name, Description) values(8, 1
 insert into Items (DepartmentId, Price, Quantity, Name, Description) values(8, 4.98, 10, 'Ricola Original Herb Cough Drops, 45 Count', 'Contains (1) packet of (45) Ricola Original Swiss Herb Cough Suppressant Throat Drops. Ricola Original Swiss Herbs Throat Drops bring strong relief of coughs and sore throats');
 
 
-insert into Items (DepartmentId, Price, Quantity, Name, Description) values(7, 7.68, 10, 'Goldfish Cheddar Cheese Crackers, 27.3 oz Carton', ‘Original ‘Flavor);
-insert into Items (DepartmentId, Price, Quantity, Name, Description) values(7, 3.99, 10, 'Goldfish Cheddar Cheese Crackers, 27.3 oz Carton', ‘Mug Rootbeer Flavor’);
+insert into Items (DepartmentId, Price, Quantity, Name, Description) values(7, 7.68, 10, 'Goldfish Cheddar Cheese Crackers, 27.3 oz Carton', 'Original Flavor');
+insert into Items (DepartmentId, Price, Quantity, Name, Description) values(7, 3.99, 10, 'Goldfish Cheddar Cheese Crackers, 27.3 oz Carton', 'Mug Rootbeer Flavor');
 insert into Items (DepartmentId, Price, Quantity, Name, Description) values(7, 7.88, 10, 'Mug Root Beer, 12 Fl Oz Cans (Pack of 12)
-', ‘No Caffine');
+', 'No Caffine');
 insert into Items (DepartmentId, Price, Quantity, Name, Description) values(7, 7.40, 10, 'A&W Root Beer Soda, 12 fl oz cans, 12 pack
 ', 'Enjoy the sweet taste of an American classic with A&W Root Beer');
 insert into Items (DepartmentId, Price, Quantity, Name, Description) values(7, 5.49, 10, 'RITZ Fresh Stacks Original Crackers, Party Size, 23.7 oz (16 Stacks)', 'Each 23.7 ounce party size box of Ritz Original Crackers contains eight individually wrapped cracker packs.');
 insert into Items (DepartmentId, Price, Quantity, Name, Description) values(7, 17.22, 10, 'OREO Fresh Stacks Chocolate Sandwich Cookies, 6-8.05 oz Boxes (24 Stacks)', 'Each snack cookies bulk box includes six boxes with 24 total individual OREO cookie fresh stacks');
-insert into Items (DepartmentId, Price, Quantity, Name, Description) values(8, 16.36, 10, 'Vicks NyQuil Cold & Flu Medicine', ‘Nighttime Flu and Cold Relief, 48 count');
-insert into Items (DepartmentId, Price, Quantity, Name, Description) values(8, 1.99, 10, ‘BandAids 10 count’, ’10 pack of BandAids');
-insert into Items (DepartmentId, Price, Quantity, Name, Description) values(8, 19.87, 10, ‘BandAids 100 count’, ’100 pack of BandAids');
+insert into Items (DepartmentId, Price, Quantity, Name, Description) values(8, 16.36, 10, 'Vicks NyQuil Cold & Flu Medicine', 'Nighttime Flu and Cold Relief, 48 count');
+insert into Items (DepartmentId, Price, Quantity, Name, Description) values(8, 1.99, 10, 'BandAids 10 count', '10 pack of BandAids');
+insert into Items (DepartmentId, Price, Quantity, Name, Description) values(8, 19.87, 10, 'BandAids 100 count', '100 pack of BandAids');
 
-insert into Items (DepartmentId, Price, Quantity, Name, Description) values(8, 4.98, 10, ’Tissue Box’, ‘1 tissue box’);
-insert into Items (DepartmentId, Price, Quantity, Name, Description) values(8, 3.36, 10, ‘Toilet Paper 1 count’, ‘1 roll of toilet paper’);
-insert into Items (DepartmentId, Price, Quantity, Name, Description) values(8, 12.02, 10, ‘Toilet Paper 12 count’, ‘12 rolls of toilet paper’);
-insert into Items (DepartmentId, Price, Quantity, Name, Description) values(8, 13.49, 10, ‘Multivitamin 100 count’, ‘100 multivitamin’);
-insert into Items (DepartmentId, Price, Quantity, Name, Description) values(8, 8.98, 10, ‘Multivitamin 50 count’, ‘50 multivitamin’);
+insert into Items (DepartmentId, Price, Quantity, Name, Description) values(8, 4.98, 10, 'Tissue Box', '1 tissue box');
+insert into Items (DepartmentId, Price, Quantity, Name, Description) values(8, 3.36, 10, 'Toilet Paper 1 count', '1 roll of toilet paper');
+insert into Items (DepartmentId, Price, Quantity, Name, Description) values(8, 12.02, 10, 'Toilet Paper 12 count', '12 rolls of toilet paper');
+insert into Items (DepartmentId, Price, Quantity, Name, Description) values(8, 13.49, 10, 'Multivitamin 100 count', '100 multivitamin');
+insert into Items (DepartmentId, Price, Quantity, Name, Description) values(8, 8.98, 10, 'Multivitamin 50 count', '50 multivitamin');
