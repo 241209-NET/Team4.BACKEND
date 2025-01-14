@@ -25,6 +25,13 @@ public class ItemRepository : IItemRepository
         .ToList();
     }
 
+    public IEnumerable<Item>? GetItemsInStockByDepartmentId(int id)
+    {
+        return _ecommerceContext.Items
+        .Where(i => i.Quantity > 0 && i.DepartmentId == id)
+        .ToList();
+    }
+
     // add item
     public Item? AddNewItem(Item newItem)
     {

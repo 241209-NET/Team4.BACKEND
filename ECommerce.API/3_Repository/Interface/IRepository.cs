@@ -19,6 +19,7 @@ public interface IItemRepository
 {
     public Item? GetItemById(int id);
     public IEnumerable<Item>? GetItemsInStock();
+    public IEnumerable<Item>? GetItemsInStockByDepartmentId(int id);
     public Item? AddNewItem(Item item);
     public Item? DeleteItemById(int id);
     public Item? UpdateItemQuantityById(int quantity, int id);

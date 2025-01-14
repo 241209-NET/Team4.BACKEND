@@ -29,6 +29,13 @@ public class ItemController : ControllerBase
         return Ok(_itemService.GetItemsInStock());
     }
 
+    //get items in stock by department id
+    [HttpGet("departmentId/{id}")]
+    public IActionResult GetItemsInStockByDepartmentId(int id)
+    {
+        return Ok(_itemService.GetItemsInStockByDepartmentId(id));
+    }
+
     // add item
     [HttpPost]
     public IActionResult AddItem(Item newItem)

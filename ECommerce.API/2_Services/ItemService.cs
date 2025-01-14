@@ -25,6 +25,11 @@ public class ItemService : IItemService
         return _itemRepository.GetItemsInStock() ?? throw new NotFoundException("No items in stock");
     }
 
+    public IEnumerable<Item> GetItemsInStockByDepartmentId(int id)
+    {
+        return _itemRepository.GetItemsInStockByDepartmentId(id) ?? throw new NotFoundException("No items in stock");
+    }
+
     public Item AddNewItem(Item newItem)
     {
         //not sure what exception to throw
