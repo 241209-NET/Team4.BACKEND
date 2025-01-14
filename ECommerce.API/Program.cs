@@ -15,7 +15,7 @@ builder.Services.AddSwaggerGen();
 
 //add dbcontext with connection string
 builder.Services.AddDbContext<ECommerceContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ECommerceDB")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ECommerceDB-2")));
 
 //add service dependencies
 builder.Services.AddScoped<IUserService, UserService>();
