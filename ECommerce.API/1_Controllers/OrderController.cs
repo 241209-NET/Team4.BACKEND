@@ -11,6 +11,7 @@ namespace ECommerce.API.Controller;
 public class OrderController : ControllerBase
 {
     private readonly IOrderService _orderService;
+     private readonly IItemService _itemService;
 
     public OrderController(IOrderService orderService) => _orderService = orderService; 
 
@@ -41,28 +42,13 @@ public class OrderController : ControllerBase
         }
     }
 
-    [HttpPatch]
-    [Route("{orderId}/items/{itemId}")]
-    public IActionResult AddItemToOrder(int orderId, int itemId, int quantity)
-    {
-        try
-        {
-            var res = _orderService.AddItemToOrder(orderId, itemId, quantity);
-            return Ok(res);
-        }
-        catch (NotFoundException e)
-        {
-            return NotFound(e);
-        }
-    }
 
     [HttpPatch]
-    [Route("{orderId}/checkout")]
-    public IActionResult CompleteCheckout(int orderId)
+    public IActionResult CreateNewOrder(Order order)
     {
         try
         {
-            var res = _orderService.CompleteCheckout(orderId);
+            var res = _orderService.CreateNewOrder(order);
             return Ok(res);
         }
         catch (NotFoundException e){
@@ -73,108 +59,4 @@ public class OrderController : ControllerBase
             return NotFound(e);
         }
     }
-
-    [HttpDelete]
-    [Route("{orderId}/items/{itemId}")]
-    public IActionResult RemoveItemFromOrder(int orderId, int itemId)
-    {
-        try
-        {
-            var res = _orderService.DeleteItemFromOrder(orderId, itemId);
-            return Ok(res);
-        }
-        catch (NotFoundException e)
-        {
-            return NotFound(e);
-        }
-    }
-    
-    [HttpGet]
-    [Route("{orderId}/items")]
-    public IActionResult GetItemsInOrder(int orderId)
-    {
-        try
-        {
-            var res = _orderService.GetItemsInOrderById(orderId);
-            return Ok(res);
-        }
-        catch (NotFoundException e)
-        {
-            return NotFound(e);
-        }
-    }
-
-    [HttpGet]
-    [Route("{orderId}/total-price")]
-    public IActionResult GetTotalPriceOfOrder(int orderId)
-    {
-        try
-        {
-            var res = _orderService.GetItemsTotal(orderId);
-            return Ok(res);
-        }
-        catch (NotFoundException e)
-        {
-            return NotFound(e);
-        }
-    }
-
-    [HttpGet]
-    [Route("{orderId}/status")]
-    public IActionResult GetOrderStatus(int orderId)
-    {
-        try
-        {
-            var res = _orderService.GetOrderStatus(orderId);
-            return Ok(res);
-        }
-        catch (NotFoundException e)
-        {
-            return NotFound(e);
-        }
-    }
-
-    [HttpPatch]
-    [Route("{orderId}/items/{itemId}/duplicate")]
-
-    public IActionResult DuplicateItemInList(int orderId, int itemId){
-        try
-        {
-            var res = _orderService.DuplicateItemInList(orderId, itemId);
-            return Ok(res);
-        }
-        catch (NotFoundException e)
-        {
-            return NotFound(e);
-        }
-        catch (Exception e)
-        {
-            return Conflict(e);
-        }
-    }
-
-
-
-    [HttpPatch]
-    [Route("{orderId}/items/{itemId}/remove")]
-
-    public IActionResult RemoveItemInList(int orderId, int itemId){
-        try
-        {
-            var res = _orderService.RemoveItemInList(orderId, itemId);
-            return Ok(res);
-        }
-        catch (NotFoundException e)
-        {
-            return NotFound(e);
-        }
-        catch (Exception e)
-        {
-            return Conflict(e);
-        }
-    }
-
-
-
-
 }

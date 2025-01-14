@@ -28,23 +28,9 @@ public interface IItemRepository
 public interface IOrderRepository
 {
 
-    public List<Order>? GetAllOrders();
+    public IEnumerable<Order>? GetAllOrders();
     public Order? GetOrderById(int id);
-
-    public List<Item>? GetItemsInOrderById(int id);
-    public Order AddItemToOrder(int orderId, int itemId, int quantity);
-
-    public Order DeleteItemFromOrder(int orderId, int itemId);
-
-    public float GetItemsTotal(int orderId);
-
-    public bool GetOrderStatus(int id);
-
-    public Order CompleteCheckout(int orderId);
-
-    public List<Item>  DuplicateItemInList(int orderId, int itemId);
-
-    public List<Item>?  RemoveItemInList(int orderId, int itemId);
+    public Order CreateNewOrder(Order order);
     
 }
 
