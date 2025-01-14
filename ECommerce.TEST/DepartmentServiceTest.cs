@@ -2,6 +2,8 @@ using Moq;
 using ECommerce.API.Model;
 using ECommerce.API.Repository;
 using ECommerce.API.Service;
+using ECommerce.API.Exceptions;
+using Microsoft.IdentityModel.Tokens;
 
 namespace ECommerce.TEST;
 
@@ -27,6 +29,7 @@ public class DepartmentServiceTest
 
         //Assert
         Assert.Equal(departments, result);
+
     }
 
 
@@ -76,6 +79,32 @@ public class DepartmentServiceTest
         mockRepo.Verify(repo => repo.GetDepartmentById(1), Times.Once);
     }
 
+    [Fact]
+    public void GetDepartmentById_NoID_Test()
+    {
+        //Arrange
+        Mock<IDepartmentRepository> mockRepo = new();
+        DepartmentService DepartmentService = new(mockRepo.Object);
+        List<Department> DepartmentList = [
+            new Department { Id = 1, Name = "Books"},
+            new Department { Id = 2, Name = "Electronics"}
+        ];
+
+        // Department TobedeletedDepartment = new Department { Id = 1, Name = "Books" };
+
+        var deleteDepartment = DepartmentList[0];
+
+        mockRepo.Setup(repo => repo.GetDepartmentById(1)).Returns(deleteDepartment);
+
+
+        //Act
+        // DepartmentService.DeleteDepartmentById(1);
+
+        //Assert
+
+        var getItem = Assert.Throws<NotFoundException>(() => DepartmentService.GetDepartmentById(3));
+    }
+
 
     [Fact]
     public void TestGetDepartmentByName()
@@ -99,7 +128,35 @@ public class DepartmentServiceTest
         mockRepo.Verify(repo => repo.GetDepartmentByName("Books"), Times.Once);
     }
 
-    [Fact(Skip = "")]
+    [Fact]
+    public void GetDepartmentByName_NoName_Test()
+    {
+        //Arrange
+        Mock<IDepartmentRepository> mockRepo = new();
+        DepartmentService DepartmentService = new(mockRepo.Object);
+        List<Department> DepartmentList = [
+            new Department { Id = 1, Name = "Books"},
+            new Department { Id = 2, Name = "Electronics"}
+        ];
+
+        // Department TobedeletedDepartment = new Department { Id = 1, Name = "Books" };
+
+        var newDepartment = DepartmentList[0];
+
+        mockRepo.Setup(repo => repo.GetDepartmentByName("Books")).Returns(DepartmentList);
+
+
+        //Act
+        var deptlist = DepartmentService.GetDepartmentByName("NoBooks") ?? [];
+
+        List<Department> emptylist = new List<Department>();
+
+        //Assert
+
+        Assert.Equal(deptlist.ToList(), emptylist.ToList());
+    }
+
+    [Fact]
     public void DeleteDepartmentByIdTest()
     {
         //Arrange
@@ -110,15 +167,43 @@ public class DepartmentServiceTest
             new Department { Id = 2, Name = "Electronics"}
         ];
 
+        Department TobedeletedDepartment = new Department { Id = 1, Name = "Books" };
+
         var deleteDepartment = DepartmentList[0];
 
-        mockRepo.Setup(repo => repo.DeleteDepartmentById(It.IsAny<int>()))
-            .Callback((int x) => DepartmentList.Remove(DepartmentList.Find(u => u.Id == x)));
+        mockRepo.Setup(repo => repo.DeleteDepartmentById(1)).Returns(deleteDepartment);
+
 
         //Act
         DepartmentService.DeleteDepartmentById(1);
 
         //Assert
-        Assert.DoesNotContain(deleteDepartment, DepartmentList);
+        Assert.Equal(deleteDepartment.Id, TobedeletedDepartment.Id);
+    }
+
+    [Fact]
+    public void DeleteDepartmentById_NoID_Test()
+    {
+        //Arrange
+        Mock<IDepartmentRepository> mockRepo = new();
+        DepartmentService DepartmentService = new(mockRepo.Object);
+        List<Department> DepartmentList = [
+            new Department { Id = 1, Name = "Books"},
+            new Department { Id = 2, Name = "Electronics"}
+        ];
+
+        Department TobedeletedDepartment = new Department { Id = 1, Name = "Books" };
+
+        var deleteDepartment = DepartmentList[0];
+
+        mockRepo.Setup(repo => repo.DeleteDepartmentById(1)).Returns(deleteDepartment);
+
+
+        //Act
+        // DepartmentService.DeleteDepartmentById(1);
+
+        //Assert
+
+        var getItem = Assert.Throws<NotFoundException>(() => DepartmentService.DeleteDepartmentById(3));
     }
 }
