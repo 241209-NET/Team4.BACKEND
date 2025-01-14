@@ -16,32 +16,70 @@ public class DepartmentController : ControllerBase
     [HttpGet]
     public IActionResult GetAllDepartments()
     {
-        var departmentList = _departmentService.GetAllDepartments();
-        return Ok(departmentList);
+        try
+        {
+            var departmentList = _departmentService.GetAllDepartments();
+            return Ok(departmentList);
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
     }
 
     [HttpGet("id/{id}")]
     public IActionResult GetDepartmentById(int id)
     {
-        return Ok(_departmentService.GetDepartmentById(id));
+        try
+        {
+
+            return Ok(_departmentService.GetDepartmentById(id));
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
     }
 
     [HttpGet("name/{name}")]
     public IActionResult GetDepartmentByName(string name)
     {
-        return Ok(_departmentService.GetDepartmentByName(name));
+        try
+        {
+
+            return Ok(_departmentService.GetDepartmentByName(name));
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
     }
 
     [HttpPost]
     public IActionResult AddDepartment(Department department)
     {
-        return Ok(_departmentService.AddDepartment(department));
+        try
+        {
+
+            return Ok(_departmentService.AddDepartment(department));
+        }
+        catch (Exception e)
+        {
+            return BadRequest(e.Message);
+        }
     }
 
     [HttpDelete]
     public IActionResult DeleteDepartment(int id)
     {
-        return Ok(_departmentService.DeleteDepartmentById(id));
+        try
+        {
+            return Ok(_departmentService.DeleteDepartmentById(id));
+        }
+        catch (Exception e)
+        {
+            return NotFound(e.Message);
+        }
     }
 
 }
