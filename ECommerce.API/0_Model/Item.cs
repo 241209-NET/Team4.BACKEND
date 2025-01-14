@@ -4,7 +4,17 @@ namespace ECommerce.API.Model;
 
 public class Item
 {
-
+    public Item(){}
+    public Item(int itemId, int departmentId, float price, int quantity, string name, string description)
+    {
+        ItemId = itemId;
+        DepartmentId = departmentId;
+        Price = price;
+        Quantity = quantity;
+        Name = name;
+        Description = description;
+        Orders = [];
+    }
     public int ItemId { get; set; }
 
     [ForeignKey("Department")]
