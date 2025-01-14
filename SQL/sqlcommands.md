@@ -86,9 +86,9 @@ insert into Items (DepartmentId, Price, Quantity, Name, Description) values(8, 4
 insert into Items (DepartmentId, Price, Quantity, Name, Description) values(7, 7.68, 10, 'Goldfish Cheddar Cheese Crackers, 27.3 oz Carton', ‘Original ‘Flavor);
 insert into Items (DepartmentId, Price, Quantity, Name, Description) values(7, 3.99, 10, 'Goldfish Cheddar Cheese Crackers, 27.3 oz Carton', ‘Mug Rootbeer Flavor’);
 insert into Items (DepartmentId, Price, Quantity, Name, Description) values(7, 7.88, 10, 'Mug Root Beer, 12 Fl Oz Cans (Pack of 12)
-', ‘No Caffinel');
+', ‘No Caffine');
 insert into Items (DepartmentId, Price, Quantity, Name, Description) values(7, 7.40, 10, 'A&W Root Beer Soda, 12 fl oz cans, 12 pack
-)', 'Enjoy the sweet taste of an American classic with A&W Root Beer');
+', 'Enjoy the sweet taste of an American classic with A&W Root Beer');
 insert into Items (DepartmentId, Price, Quantity, Name, Description) values(7, 5.49, 10, 'RITZ Fresh Stacks Original Crackers, Party Size, 23.7 oz (16 Stacks)', 'Each 23.7 ounce party size box of Ritz Original Crackers contains eight individually wrapped cracker packs.');
 insert into Items (DepartmentId, Price, Quantity, Name, Description) values(7, 17.22, 10, 'OREO Fresh Stacks Chocolate Sandwich Cookies, 6-8.05 oz Boxes (24 Stacks)', 'Each snack cookies bulk box includes six boxes with 24 total individual OREO cookie fresh stacks');
 insert into Items (DepartmentId, Price, Quantity, Name, Description) values(8, 16.36, 10, 'Vicks NyQuil Cold & Flu Medicine', ‘Nighttime Flu and Cold Relief, 48 count');
