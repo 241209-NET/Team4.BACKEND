@@ -13,6 +13,7 @@ public class ECommerceContext : DbContext
     public DbSet<Department> Departments { get; set; }
     public DbSet<Item> Items { get; set; }
     public DbSet<Order> Orders { get; set; }
+    public DbSet<ItemSold> ItemSolds { get; set; }
 
     
 }
