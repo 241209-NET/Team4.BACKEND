@@ -48,7 +48,7 @@ public class ItemRepository : IItemRepository
     public Item? UpdateItemQuantityById(int quantity, int id)
     {
         var newItem = GetItemById(id);
-        newItem.Quantity = quantity; 
+        newItem.Quantity -= quantity; 
         _ecommerceContext.SaveChanges(); 
 
         return GetItemById(newItem.ItemId);

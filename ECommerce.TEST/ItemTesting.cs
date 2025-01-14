@@ -141,7 +141,7 @@ public class ItemTesting
         var getItem = Assert.Throws<NotFoundException>(() => itemService.DeleteItemById(unexpectedItem.ItemId));
 
     }
-/*
+
     [Fact]
     public void UpdateItemQuantityByIdTest()
     {
@@ -161,5 +161,5 @@ public class ItemTesting
         var toUpdate = itemService.UpdateItemQuantityById(3, expectedItem.ItemId);
         Assert.Equal(3, toUpdate.Quantity);
     }
-    */
+    
 }

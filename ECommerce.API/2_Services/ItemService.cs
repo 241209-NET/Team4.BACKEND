@@ -38,7 +38,6 @@ public class ItemService : IItemService
 
     public Item UpdateItemQuantityById(int quantity, int id)
     {
-        var item = GetItemById(id);
-        return _itemRepository.UpdateItemQuantityById(item.Quantity - quantity, id) ?? throw new NotFoundException("Item not found");
+        return _itemRepository.UpdateItemQuantityById(quantity, id) ?? throw new NotFoundException("Item not found");
     }
 }
