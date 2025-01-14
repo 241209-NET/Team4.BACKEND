@@ -104,22 +104,6 @@ public class ItemTesting
         Assert.Equal(expectedItem, addItem);
     }
 
-    [Fact]
-    public void InvalidItemTest()
-    {
-        /*
-        Mock<IItemRepository> mockRepo = new();
-        Mock<IMapper> mockMapper = new(); 
-
-        ItemService itemService = new(mockRepo.Object); 
-        var expectedItem = new Item {DepartmentId = 0, Price = 0.99f, Quantity = 2, Name = "Test Pizza", Description = "test", Orders = []};
-        mockRepo.Setup(repo => repo.AddNewItem(It.IsAny<Item>())).Returns(expectedItem);
-
-        string notAnItem = "I'm an item";
-        var addItem = itemService.AddNewItem(notAnItem);
-         Assert.Throws<NotFoundException>(notAnItem);
-        */
-    }
 
     [Fact]
     public void DeleteItemByIdTest()
@@ -138,6 +122,24 @@ public class ItemTesting
         //Assert
         Assert.NotNull(toDelete);
         Assert.Equal(expectedItem, toDelete);
+    }
+
+    [Fact]
+    public void DeleteItemByIdTestNoId()
+    {
+        Mock<IItemRepository> mockRepo = new();
+        Mock<IMapper> mockMapper = new(); 
+
+        ItemService itemService = new(mockRepo.Object); 
+        var expectedItem = new Item {ItemId = 0, DepartmentId = 0, Price = 0.99f, Quantity = 2, Name = "Test Pizza", Description = "test", Orders = []};
+        var unexpectedItem = new Item {ItemId = 1, DepartmentId = 0, Price = 0.99f, Quantity = 1, Name = "Evil Test Pizza", Description = "nope", Orders = []};
+
+        mockRepo.Setup(repo => repo.DeleteItemById(expectedItem.ItemId)).Returns(expectedItem);
+
+
+        //Assert
+        var getItem = Assert.Throws<NotFoundException>(() => itemService.DeleteItemById(unexpectedItem.ItemId));
+
     }
 
     [Fact]
