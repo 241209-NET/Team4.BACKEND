@@ -43,7 +43,7 @@ public class OrderController : ControllerBase
     }
 
 
-    [HttpPatch]
+    [HttpPost]
     public IActionResult CreateNewOrder(Order order)
     {
         try
