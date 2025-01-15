@@ -10,9 +10,7 @@ public class ItemSold
 
     [ForeignKey("Item")]
     public int ItemId_FK { get; set; }
-
-    [ForeignKey("User")]
-    public int UserId_FK { get; set; } 
+    
     public int QuantitySold { get; set; }
 
 }
