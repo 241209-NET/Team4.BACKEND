@@ -85,9 +85,6 @@ namespace ECommerce.API.Migrations
                     b.Property<int?>("OrderId")
                         .HasColumnType("int");
 
-                    b.Property<int>("OrderId_FK")
-                        .HasColumnType("int");
-
                     b.Property<int>("QuantitySold")
                         .HasColumnType("int");
 

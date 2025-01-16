@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ECommerce.API.Migrations
 {
     [DbContext(typeof(ECommerceContext))]
-    [Migration("20250108203445_ItemModelUpdate")]
-    partial class ItemModelUpdate
+    [Migration("20250115221625_current")]
+    partial class current
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,9 +61,6 @@ namespace ECommerce.API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("OrderId")
-                        .HasColumnType("int");
-
                     b.Property<float>("Price")
                         .HasColumnType("real");
 
@@ -74,9 +71,31 @@ namespace ECommerce.API.Migrations
 
                     b.HasIndex("DepartmentId");
 
+                    b.ToTable("Items");
+                });
+
+            modelBuilder.Entity("ECommerce.API.Model.ItemSold", b =>
+                {
+                    b.Property<int>("ItemSoldId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ItemSoldId"));
+
+                    b.Property<int>("ItemId_FK")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("QuantitySold")
+                        .HasColumnType("int");
+
+                    b.HasKey("ItemSoldId");
+
                     b.HasIndex("OrderId");
 
-                    b.ToTable("Items");
+                    b.ToTable("ItemSolds");
                 });
 
             modelBuilder.Entity("ECommerce.API.Model.Order", b =>
@@ -91,8 +110,8 @@ namespace ECommerce.API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsOrdered")
-                        .HasColumnType("bit");
+                    b.Property<int?>("ItemId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
@@ -104,6 +123,8 @@ namespace ECommerce.API.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("OrderId");
+
+                    b.HasIndex("ItemId");
 
                     b.HasIndex("UserId");
 
@@ -138,7 +159,10 @@ namespace ECommerce.API.Migrations
                         .HasForeignKey("DepartmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
 
+            modelBuilder.Entity("ECommerce.API.Model.ItemSold", b =>
+                {
                     b.HasOne("ECommerce.API.Model.Order", null)
                         .WithMany("Items")
                         .HasForeignKey("OrderId");
@@ -146,6 +170,10 @@ namespace ECommerce.API.Migrations
 
             modelBuilder.Entity("ECommerce.API.Model.Order", b =>
                 {
+                    b.HasOne("ECommerce.API.Model.Item", null)
+                        .WithMany("Orders")
+                        .HasForeignKey("ItemId");
+
                     b.HasOne("ECommerce.API.Model.User", null)
                         .WithMany("Orders")
                         .HasForeignKey("UserId")
@@ -156,6 +184,11 @@ namespace ECommerce.API.Migrations
             modelBuilder.Entity("ECommerce.API.Model.Department", b =>
                 {
                     b.Navigation("Items");
+                });
+
+            modelBuilder.Entity("ECommerce.API.Model.Item", b =>
+                {
+                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("ECommerce.API.Model.Order", b =>

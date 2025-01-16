@@ -17,8 +17,8 @@ public class UnitTest1
         OrderService _orderService = new(mockOrder.Object, mockService.Object);
     
         // Arrange
-        ItemSold item1 = new ItemSold(1, 1, 1, 10);
-        ItemSold item2 = new ItemSold(1, 2, 1, 10);
+        ItemSold item1 = new ItemSold{ItemSoldId = 1, ItemId_FK = 1, QuantitySold = 10};
+        ItemSold item2 = new ItemSold{ItemSoldId = 1, ItemId_FK = 2, QuantitySold = 10};
 
 
         Order order1 = new(
@@ -73,8 +73,8 @@ public class UnitTest1
         OrderService _orderService = new(mockOrder.Object, mockService.Object);
     
         // Arrange
-        ItemSold item1 = new ItemSold(1, 1, 1, 10);
-        ItemSold item2 = new ItemSold(1, 2, 1, 10);
+        ItemSold item1 = new ItemSold{ItemSoldId = 1, ItemId_FK = 1, QuantitySold = 10};
+        ItemSold item2 = new ItemSold{ItemSoldId = 1, ItemId_FK = 2, QuantitySold = 10};
 
 
         Order order1 = new(
@@ -110,8 +110,8 @@ public class UnitTest1
         OrderService _orderService = new(mockOrder.Object, mockService.Object);
     
         // Arrange
-        ItemSold item1 = new ItemSold(1, 1, 1, 10);
-        ItemSold item2 = new ItemSold(1, 2, 1, 10);
+        ItemSold item1 = new ItemSold{ItemSoldId = 1, ItemId_FK = 1, QuantitySold = 10};
+        ItemSold item2 = new ItemSold{ItemSoldId = 1, ItemId_FK = 2, QuantitySold = 10};
 
 
         Order order1 = new(
@@ -169,8 +169,8 @@ public class UnitTest1
         OrderService _orderService = new(mockOrder.Object, mockService.Object);
     
         // Arrange
-        ItemSold item1 = new ItemSold(1, 1, 1, 10);
-        ItemSold item2 = new ItemSold(1, 2, 1, 10);
+        ItemSold item1 = new ItemSold{ItemSoldId = 1, ItemId_FK = 1, QuantitySold = 10};
+        ItemSold item2 = new ItemSold{ItemSoldId = 1, ItemId_FK = 2, QuantitySold = 10};
 
 
         Order order1 = new(
@@ -204,7 +204,7 @@ public class UnitTest1
         OrderService _orderService = new(mockOrder.Object, mockService.Object);
     
         // Arrange
-        ItemSold item1 = new ItemSold(1, 1, 1, 5);
+        ItemSold item1 = new ItemSold{ItemSoldId = 1, ItemId_FK = 1, QuantitySold = 5};
 
 
         Item itemStock = new Item(1,1,1.0f,10,"","");
@@ -266,7 +266,7 @@ public class UnitTest1
         OrderService _orderService = new(mockOrder.Object, mockService.Object);
     
         // Arrange
-        ItemSold item1 = new ItemSold(1, 1, 1, 5);
+        ItemSold item1 = new ItemSold{ItemSoldId = 1, ItemId_FK = 1, QuantitySold = 5};
 
 
         Item itemStock = new Item(1,1,1.0f,10,"","");

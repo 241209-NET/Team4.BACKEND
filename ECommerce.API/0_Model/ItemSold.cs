@@ -5,12 +5,9 @@ public class ItemSold
 {
     public int ItemSoldId { get; set; }
 
-    [ForeignKey("Order")]
-    public int OrderId_FK { get; set; } 
-
     [ForeignKey("Item")]
     public int ItemId_FK { get; set; }
-    
+
     public int QuantitySold { get; set; }
 
 }
