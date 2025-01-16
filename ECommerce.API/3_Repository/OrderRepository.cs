@@ -14,7 +14,7 @@ public class OrderRepository : IOrderRepository
 
     public IEnumerable<Order>? GetAllOrders()
     {
-        return _ecommerceContext.Orders.ToList();
+        return _ecommerceContext.Orders.Include(o => o.Items).ToList();
     }
 
     public  Order? GetOrderById(int id)
